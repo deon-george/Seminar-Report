@@ -1,31 +1,51 @@
+> [!TIP]
+> 📑 [Click here to view the Full Literature Review (`thesis.pdf`)](./thesis.pdf)
+
 # Seminar Report - NeRF-DA
 
-This repository contains the LaTeX source for the seminar report titled "NeRF-DA: Neural Radiance Fields Deblurring with Active Learning".
+Welcome to the repository for the Seminar Report on **NeRF-DA: Neural Radiance Fields Deblurring with Active Learning**, written in LaTeX. This project serves as a centralized, version-controlled source for the document, allowing for clean formatting and easy updates.
 
-## Project structure
+## 🚀 How to Build
 
-- `thesis.tex` — main document entry point
-- `frontmatter/` — title page and formatting setup
-- `chapters/` — chapter files
-- `references/` — bibliography file
-- `assets/` — images and other media
-- `templates/` — class and style files
+To compile the PDF from the LaTeX source, you will need a LaTeX distribution installed on your system, such as TeX Live, MiKTeX, or MacTeX.
 
-## Build
+Clone the repository:
 
-From the project root, compile with:
+```bash
+git clone <repository-url>
+cd Seminar-Report
+```
+
+Compile the document:
+
+You can compile the `.tex` file using `pdflatex`:
 
 ```bash
 pdflatex -interaction=nonstopmode -halt-on-error thesis.tex
 ```
 
-If you use a LaTeX build tool such as `latexmk`, it can also be used for repeated recompilation:
+This will generate a `thesis.pdf` file in the same directory.
+
+Alternatively, you can use a LaTeX build tool such as `latexmk` for repeated recompilation:
 
 ```bash
 latexmk -pdf thesis.tex
 ```
 
+## 📁 Repository Structure
+
+- `thesis.tex`: The main LaTeX source file containing the report content and formatting.
+- `thesis.pdf`: The compiled, ready-to-view PDF version of the seminar report.
+- `frontmatter/`: Title page, formatting, and document front matter.
+- `chapters/`: Individual chapter source files.
+- `references/`: Bibliography/reference file.
+- `assets/`: Images, figures, and other media used in the document.
+- `templates/`: Backup or legacy class/style files.
+- `.gitignore`: Git configuration to ignore temporary LaTeX build artifacts.
+- `README.md`: This file, providing an overview of the repository.
+
 ## Notes
 
-- The project is configured so that generated LaTeX artifacts are ignored via `.gitignore`.
-- The source is organized into logical folders to keep the thesis easier to manage and maintain.
+- The project is organized into logical folders to keep the thesis easier to manage and maintain.
+- Generated LaTeX artifacts are ignored via `.gitignore` so the repository stays clean.
+- The source is suitable for local compilation or for uploading to Overleaf as-is.

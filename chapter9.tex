@@ -1,0 +1,18 @@
+\chapter{\MakeUppercase{Advantages and Limitations}}
+\setcounter{equation}{0}
+
+\section{Strengths Discussed in the Report}
+\begin{itemize}
+\item Selective data curation reduces the influence of redundant and severely blurred views.
+\item Joint deblurring and scene reconstruction uses information from multiple views.
+\item The reported comparisons use PSNR, SSIM, and LPIPS to assess reconstruction quality.
+\end{itemize}
+\section{Limitations Identified through Critical Analysis}
+The following points are seminar-level analysis and should not be presented as explicit author claims without checking the paper.
+\begin{itemize}
+\item Reconstruction depends on camera-pose accuracy and adequate scene coverage.
+\item Too few selected views can remove information required for reliable reconstruction.
+\item Image entropy is an information proxy; noise and texture may affect its suitability as a sharpness indicator.
+\item Iterative reconstruction and retraining introduce computational cost.
+\item The reported datasets do not establish performance for every dynamic, low-light, or safety-critical application.
+\end{itemize}

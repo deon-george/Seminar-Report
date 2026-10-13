@@ -1,51 +1,41 @@
 > [!TIP]
-> 📑 [Click here to view the Full Literature Review (`thesis.pdf`)](./thesis.pdf)
+> 📑 [View the completed seminar report (`thesis.pdf`)](./thesis.pdf)
 
-# Seminar Report - NeRF-DA
+# Seminar Report - XGBoost-Based URL Phishing Detection
 
-Welcome to the repository for the Seminar Report on **NeRF-DA: Neural Radiance Fields Deblurring with Active Learning**, written in LaTeX. This project serves as a centralized, version-controlled source for the document, allowing for clean formatting and easy updates.
+This repository contains the seminar report **“XGBoost-Based URL Phishing Detection Method With Cross-Dataset Validation.”** The report examines the X-PHIDE approach for phishing URL detection, with emphasis on feature stability, Bayesian optimisation, browser-oriented deployment, and cross-dataset generalisation.
 
-## 🚀 How to Build
+## Report highlights
 
-To compile the PDF from the LaTeX source, you will need a LaTeX distribution installed on your system, such as TeX Live, MiKTeX, or MacTeX.
+- Explains phishing-URL detection using XGBoost and URL-derived features.
+- Reviews the X-PHIDE pipeline: URL input, feature extraction, stable-feature selection, XGBoost scoring, and browser-side safety labels.
+- Summarises experiments on the Custom, GramBeddings, and PhiUSIIL datasets.
+- Highlights the difference between within-dataset and cross-dataset performance, including the reported 77.93% average F1 score across the three evaluation sets.
+- Discusses model efficiency, limitations under dataset shift, and future directions such as retraining, model compression, and runtime validation.
 
-Clone the repository:
+## Reference material
 
-```bash
-git clone <repository-url>
-cd Seminar-Report
+- `XGBoost-Based_URL_Phishing_Detection_Method_With_Cross-Dataset_Validation.pdf` - the primary IEEE Access paper analysed in the report.
+- `Seminar-ppt.pdf` - the accompanying seminar presentation.
+- `thesis.pdf` - the final, ready-to-read seminar report.
+
+## Repository structure
+
+```text
+.
+├── thesis.pdf
+├── XGBoost-Based_URL_Phishing_Detection_Method_With_Cross-Dataset_Validation.pdf
+├── Seminar-ppt.pdf
+├── README.md
+├── thesis.tex
+├── chapters/
+├── frontmatter/
+├── references/
+└── assets/
 ```
 
-Compile the document:
+## Note on sources
 
-You can compile the `.tex` file using `pdflatex`:
+`thesis.pdf` is the current deliverable and reflects the XGBoost phishing-detection topic. The LaTeX source tree (`thesis.tex`, `chapters/`, `frontmatter/`, `references/`, and legacy assets) 
 
-```bash
-pdflatex -interaction=nonstopmode -halt-on-error thesis.tex
-```
-
-This will generate a `thesis.pdf` file in the same directory.
-
-Alternatively, you can use a LaTeX build tool such as `latexmk` for repeated recompilation:
-
-```bash
-latexmk -pdf thesis.tex
-```
-
-## 📁 Repository Structure
-
-- `thesis.tex`: The main LaTeX source file containing the report content and formatting.
-- `thesis.pdf`: The compiled, ready-to-view PDF version of the seminar report.
-- `frontmatter/`: Title page, formatting, and document front matter.
-- `chapters/`: Individual chapter source files.
-- `references/`: Bibliography/reference file.
-- `assets/`: Images, figures, and other media used in the document.
-- `templates/`: Backup or legacy class/style files.
-- `.gitignore`: Git configuration to ignore temporary LaTeX build artifacts.
-- `README.md`: This file, providing an overview of the repository.
-
-## Notes
-
-- The project is organized into logical folders to keep the thesis easier to manage and maintain.
-- Generated LaTeX artifacts are ignored via `.gitignore` so the repository stays clean.
-- The source is suitable for local compilation or for uploading to Overleaf as-is.
+Made with ❤️ by Deon George 

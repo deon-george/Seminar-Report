@@ -16,11 +16,11 @@ The images are then initially included in the labeled dataset ($D_L$) based on a
 
 \subsection{\MakeUppercase{Entropy for Blur Images}}
 The authors further refine the selection for $D_L$ by using entropy to quantify the amount of information within each image and select only the data that is most likely to improve model performance. High-quality, sharp images exhibit larger entropy values, while low-quality, blurred images possess smaller entropy values. The blur entropy for each image is calculated as the sum of local entropies:
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.47\linewidth]{eq2.png}
+    \includegraphics[width=0.47\linewidth]{assets/figures/eq2.png}
 \end{figure}
-\\where $S_k$ is the local entropy at window $k$, and $w$ and $h$ are the width and height of the image. The images selected based on the light field camera candidates are combined with these blur entropy values and updated into $D_L$, typically prioritizing less-blurred (higher entropy) images.
+\noindent where $S_k$ is the local entropy at window $k$, and $w$ and $h$ are the width and height of the image. The images selected based on the light field camera candidates are combined with these blur entropy values and updated into $D_L$, typically prioritizing less-blurred (higher entropy) images.
 
 \subsection{\MakeUppercase{Unseen View Camera Poses}}
 To address the lack of ambient view information at the outer edges of the forward-facing light field images, and to overcome the limitations of a static dataset, the authors generate unseen view camera poses. This is achieved by manipulating the rotation and translation values of the camera extrinsics derived from COLMAP outputs. These generated unseen view camera poses, along with the camera poses of the strongly blurred original images, are assigned to the unlabeled set ($D_U$).
@@ -36,9 +36,9 @@ The key step for querying new data is employing the uncertainty sampling method 
 
 The NeRF model is subsequently trained from scratch with the newly integrated labeled data. Importantly, since the newly integrated data have been effectively deblurred and selected for high information content, the performance is further improved even when training only the NeRF model (excluding the DSK module) during the subsequent optimization cycles. This iterative process continues until a satisfactory level of model performance is achieved (estimated to be about half of the total training time).
 \section{\MakeUppercase{Framework}}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.00\linewidth]{Images/framework.png}
+    \includegraphics[width=1.00\linewidth]{assets/Images/framework.png}
     \caption{NeRF-DA framework reproduced from the supplied report of Hong and Kim.\cite{bib1}}
 \end{figure}
 The initial labeled set $D_L$ has high entropy on the blurred images and comprises images that ensure that the camera position is not on the outer edge to maintain data balance. Then, the authors utilize $D_L$ to train the Deblur-NeRF model, which comprises the DSK module for deblurring and the NeRF module for view synthesis, to establish a strong foundation for deblurring. We construct an unlabeled set $D_U$ comprising strongly blurred images not present in the initial $D_L$ and additional unseen view camera poses, introduced to maintain balance, then reconstruct sharp images using the model. As in pool-based active learning, we conduct NeRF training by employing entropy to select the optimal sample for querying within the unlabeled pool $D_U$.

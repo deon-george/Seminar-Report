@@ -25,32 +25,26 @@
 
 \thispagestyle{empty}
 \begin{center}
-  {\Large \bf \MakeUppercase{NERF-DA: NEURAL RADIANCE FIELDS DEBLURRING WITH ACTIVE LEARNING} }
-  \\
-  
-\vspace*{1.15 cm}
-{\large \bf SEMINAR REPORT}
+  {\Large\bfseries \MakeUppercase{NERF-DA: NEURAL RADIANCE FIELDS DEBLURRING WITH ACTIVE LEARNING}}
 
+  \vspace*{1.15cm}
+  {\large\bfseries SEMINAR REPORT}
 
-   \vspace*{0.1cm}
-   {\large Submitted by\\\vspace*{0.6cm} { \bf TOM SIBU \\Reg. No: SJC22CS126}\\
- }
-  {\large to\\[-0.6mm] the APJ Abdul Kalam Technological University\\[-0.6mm] in partial fulfillment of the requirements for the award of the degree\\[-0.6mm] of\\[-0.6mm] Bachelor of Technology\\[-0.6mm] in\\[-0.6mm] {\emph { \textbf{Computer Science and Engineering}}}
+  \vspace*{0.1cm}
+  {\large Submitted by\\[0.6cm] {\bf TOM SIBU\\Reg. No: SJC22CS126}}
+
+  {\large to\\[-0.6mm] the APJ Abdul Kalam Technological University\\[-0.6mm] in partial fulfillment of the requirements for the award of the degree\\[-0.6mm] of\\[-0.6mm] Bachelor of Technology\\[-0.6mm] in\\[-0.6mm] {\emph{\textbf{Computer Science and Engineering}}}}
+
   \vspace*{1cm}
-  
-  % Put your university logo here if you wish.
-   \begin{center}
-   \includegraphics[scale=1.2]{SJCET_logo.jpg}
-   \end{center}
+  \includegraphics[scale=1.2]{assets/logos/SJCET_logo.jpg}
 
-{ \normalsize \bf Department of Computer Science and Engineering}\\
-{ \normalsize \bf St. Joseph's College of Engineering and Technology, Palai (Autonomous)}\\
-          }
-\large
-{ \bf October 2026}
+  \vspace{0.5cm}
+  {\normalsize\bfseries Department of Computer Science and Engineering}\\
+  {\normalsize\bfseries St. Joseph's College of Engineering and Technology, Palai (Autonomous)}
 
+  \vspace{0.3cm}
+  {\large\bfseries October 2026}
 \end{center}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% The dedication page, of you have one  %%%%%%%%%%%%%%%%%%%%  
@@ -91,7 +85,7 @@
     \begin{flushleft}
         \hspace*{-0.65in}
    \includegraphics[scale=0.5]
-   {SJCET_logo.jpg}\\[1.0cm]
+   {assets/logos/SJCET_logo.jpg}\\[1.0cm]
         \end{flushleft}
 
      
@@ -102,16 +96,21 @@ This is to certify that the seminar report entitled {\bf``NERF-DA: NEURAL RADIAN
 (SJC22CS126) } to the APJ Abdul Kalam Technological University  in partial fulfillment of the requirements for the award of
 the degree of Bachelor of Technology in Computer Science and Engineering is a bonafide
 report of the seminar presented by him under my guidance and supervision.\vspace{1.3 cm}\\
-{\bf Supervisor}\hspace{8.9 cm}{\bf Seminar Coordinator}\\ Prof. xxxxx xxxxx
- \hspace{7.5cm}Prof. Sarju S \\ Assistant Professor\hspace{7.6cm} Assistant Professor \hspace{8.6cm} \\ Department of CSE \hspace{7.3 cm} Department of CSE
-\vspace{1.3 cm}\\
- .\hspace{10.6 cm}{ \bf Head of the Department}
-\newline
-.\hspace{10.7 cm}Dr. Joby P P
-\newline
-Place : Choondacherry  \hspace{6.8 cm}Professor \& Head
-\newline
-Date\hspace{0.25 cm}: 10-08-2025\hspace{7.5 cm}Department of CSE
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} ll}
+\textbf{Supervisor} & \textbf{Seminar Coordinator} \\
+Prof. xxxxx xxxxx & Prof. Sarju S \\
+Assistant Professor & Assistant Professor \\
+Department of CSE & Department of CSE
+\end{tabular*}
+
+\vspace{1.3cm}
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} ll}
+\textbf{Head of the Department} & \\
+Dr. Joby P P & \\
+Professor \& Head, Department of CSE & \\
+Place : Choondacherry & Date : 10-08-2025
+\end{tabular*}
 
 \newpage
 \thispagestyle{empty}
@@ -123,25 +122,33 @@ The success and final outcome of this seminar required a lot of guidance and ass
 many people, and I feel extremely privileged to have received this support throughout the
 completion of my seminar. Everything I have achieved is a result of the supervision and
 assistance I received, and I will never forget to express my gratitude.
-\\[-0.3cm]
-\\I would like to extend my sincere respect and gratitude to the management of St. Joseph’s
+
+\vspace{-0.3cm}
+
+I would like to extend my sincere respect and gratitude to the management of St. Joseph’s
 College of Engineering and Technology for providing me with the opportunity and platform
 to undertake this seminar work.
-\\[-0.3cm]
-\\I am deeply thankful to our beloved Principal, Dr. V P Devassia, for offering such excellent
+
+\vspace{-0.3cm}
+
+I am deeply thankful to our beloved Principal, Dr. V P Devassia, for offering such excellent
 support and facilities for the successful completion of this seminar work.
 I am also greatly indebted to our Head of the Department, Dr. Joby P P, Professor in the Department of Computer Science and Engineering, for the invaluable suggestions and encouragement throughout my seminar work.
-\\[-0.3cm]
-\\I would also like to express my heartfelt gratitude to Prof. Sarju S and Prof. Ariyamol P G, Seminar Coordinators of the Department of Computer Science and Engineering, for their valuable guidance, constant encouragement, and dedicated efforts in coordinating the seminar activities. I owe a profound debt of gratitude to my seminar guide, Mrs. Teena George,
+
+\vspace{-0.3cm}
+
+I would also like to express my heartfelt gratitude to Prof. Sarju S and Prof. Ariyamol P G, Seminar Coordinators of the Department of Computer Science and Engineering, for their valuable guidance, constant encouragement, and dedicated efforts in coordinating the seminar activities. I owe a profound debt of gratitude to my seminar guide, Mrs. Teena George,
 Assistant Professor in Computer Science and Engineering,
 who showed a keen interest in my seminar and guided me until its completion by providing
 all the necessary information.
-\\[-0.3cm]
-\\I am thankful and fortunate to have received constant encouragement, support, and guidance
+
+\vspace{-0.3cm}
+
+I am thankful and fortunate to have received constant encouragement, support, and guidance
 from all the faculty members of the Department of Computer Science and Engineering, which
 played a pivotal role in the successful completion of my seminar work. Additionally, I would
 like to extend my sincere appreciation to all the laboratory staff for their timely support.
-\\
+
 \begin{flushright}
     Tom Sibu
 \end{flushright}
@@ -156,7 +163,7 @@ like to extend my sincere appreciation to all the laboratory staff for their tim
 \tableofcontents
 \thispagestyle{empty}
 \newpage
-\addcontentsline{toc}{chapter}{\numberline{ABSTRACT}}
+\addcontentsline{toc}{chapter}{ABSTRACT}
 \fancyhf{}
 \fancyfoot[R]{\hfill\thepage}
 \renewcommand{\footrulewidth}{0pt}
@@ -175,17 +182,17 @@ Neural Radiance Fields (NeRF) achieve photo-realistic novel view synthesis, but 
 \fancyhf{}
 \fancyfoot[R]{\hfill\thepage}
 \renewcommand{\footrulewidth}{0pt}
-\addcontentsline{toc}{chapter}{\numberline{\MakeUppercase{List of Figures}}}
+\addcontentsline{toc}{chapter}{List of Figures}
 
 \listoftables
 \thispagestyle{fancy}
 \fancyhf{}
 \fancyfoot[R]{\hfill\thepage}
 \renewcommand{\footrulewidth}{0pt}
-\addcontentsline{toc}{chapter}{\numberline{\MakeUppercase{List of Tables}}}
+\addcontentsline{toc}{chapter}{List of Tables}
 
 \printnomenclature
-\addcontentsline{toc}{chapter}{\numberline{\MakeUppercase{Abbreviations}}}
+\addcontentsline{toc}{chapter}{Abbreviations}
 \thispagestyle{fancy}
 \fancyhf{}
 \fancyfoot[R]{\hfill\thepage}

@@ -5,7 +5,7 @@
 This repository contains the LaTeX source for the seminar report based on the source paper by Misiek and Hyla (2026), published in *IEEE Access* (DOI: [10.1109/ACCESS.2026.3672690](https://doi.org/10.1109/ACCESS.2026.3672690)).
 
 > [!TIP]
-> 📑 [Click here to view the full seminar report (`thesis.pdf`)](./thesis.pdf)
+> 📑 [Click here to view the full seminar report (`thesis.pdf`)](https://github.com/deon-george/Seminar-Report/raw/refs/heads/main/thesis.pdf)
 
 ## Contents
 

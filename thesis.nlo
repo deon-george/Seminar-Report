@@ -1,0 +1,15 @@
+\nomenclatureentry{aURL@[{URL}]\begingroup Uniform Resource Locator\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aXGBoost@[{XGBoost}]\begingroup Extreme Gradient Boosting\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aML@[{ML}]\begingroup Machine Learning\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aDNS@[{DNS}]\begingroup Domain Name System\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aHTTPS@[{HTTPS}]\begingroup Hypertext Transfer Protocol Secure\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aF1@[{F1}]\begingroup F1 score\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aROC@[{ROC}]\begingroup Receiver Operating Characteristic\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aCV@[{CV}]\begingroup Coefficient of Variation\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aLLM@[{LLM}]\begingroup Large Language Model\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aAUC@[{AUC}]\begingroup Area Under the Curve\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aONNX@[{ONNX}]\begingroup Open Neural Network Exchange\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aTP@[{TP}]\begingroup True Positive\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aTN@[{TN}]\begingroup True Negative\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aFP@[{FP}]\begingroup False Positive\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{aFN@[{FN}]\begingroup False Negative\nomeqref {0}|nompageref}{1}

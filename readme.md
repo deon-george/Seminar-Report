@@ -13,19 +13,20 @@ This repository contains the LaTeX source for the seminar report based on the so
 - `Annexure.tex`, `append.tex`, and `vm.tex`: Supporting report sections
 - `dmathesis.cls`, `format.tex`, and `showlabel.sty`: Document class and formatting files
 - `SJCET_logo.jpg`: Logo used by the report
+- `Seminar_Report_2026_Final.pdf`: Compiled report
 
 ## Building the report
 
 Install a LaTeX distribution with `latexmk`, then run from this directory:
 
 ```sh
-latexmk -pdf thesis.tex
+latexmk -pdf -jobname=Seminar_Report_2026_Final thesis.tex
 ```
 
-The generated PDF and auxiliary build files are ignored by Git. To remove generated files:
+This creates the single final PDF, `Seminar_Report_2026_Final.pdf`. Generated PDFs and auxiliary build files are ignored by Git. To remove generated files:
 
 ```sh
-latexmk -C thesis.tex
+latexmk -C -jobname=Seminar_Report_2026_Final thesis.tex
 ```
 
 ## Before submission

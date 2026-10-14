@@ -7,3 +7,16 @@ Phishing is a social-engineering attack in which an attacker deceives a user int
 Browser-based protection needs to assess links quickly, including URLs that have not previously appeared in public blocklists. Static lists are valuable for known threats but cannot by themselves recognise every newly created or modified malicious URL. Machine-learning models can identify patterns in URL characteristics, but their performance may decline when the source or distribution of URLs changes. This is known as dataset shift or a generalisation gap.
 
 The selected paper, by Misiek and Hyla, introduces X-PHIDE, an XGBoost-based phishing URL detection method and evaluates it across three datasets. Its central emphasis is not only high performance on a single test split, but also cross-dataset validation, feature stability, and practical computational cost.\cite{bib1}
+
+\section{Objectives}
+The objectives of this seminar report are:
+\begin{itemize}
+\item To explain the challenges involved in detecting phishing URLs and in obtaining reliable generalisation across different datasets.
+\item To summarize the dataset preparation, URL feature extraction, feature-selection process, and XGBoost model described in the base paper.
+\item To explain the cross-dataset validation strategy, Bayesian hyperparameter optimisation, and evaluation measures used by the authors.
+\item To review the paper's reported detection performance, computational requirements, and comparison with neural-network and baseline models.
+\item To discuss the potential browser-based applications, limitations, and future research directions of the X-PHIDE method.
+\end{itemize}
+
+\section{Scope of the Report}
+This report is a technical review of the selected research paper and its reported experiments. It explains the datasets, URL features, model pipeline, validation procedure, results, and browser plug-in workflow as presented by the authors. The report does not claim to reproduce the training experiments or to implement a complete phishing-detection system independently. All numerical results are attributed to the original paper.\cite{bib1}

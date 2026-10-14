@@ -8,14 +8,12 @@
 *.lof
 *.log
 *.lot
+*.nlo
 *.out
 *.run.xml
 *.synctex.gz
 *.toc
 *.xdv
-
-# Generated documents
-*.pdf
 
 # Editor and OS files
 *~

@@ -9,4 +9,15 @@ Phishing URL detectors may achieve strong results when training and testing use 
 The paper investigates three questions: (1) whether XGBoost achieves cross-dataset generalisation compared with baseline methods; (2) how feature-importance stability relates to cross-dataset performance; and (3) how the computational efficiency of XGBoost compares with neural networks for real-time deployment.\cite{bib1}
 
 \section{Scope of the Seminar}
-This report reviews the published X-PHIDE method, its datasets, feature extraction and selection, Bayesian hyperparameter optimisation, browser plug-in workflow, evaluation results, strengths, limitations, and possible future work. The numerical results are those reported by the original authors; no independent training or replication is claimed.
+The scope of this seminar includes the following aspects of the published X-PHIDE method:
+\begin{itemize}
+\item The motivation for URL-only phishing detection and the challenges caused by dataset shift and changing URL distributions.
+\item The sources, composition, and role of the custom, GramBeddings, and PhiUSIIL datasets used in the study.
+\item The extraction of lexical, structural, domain-related, and other URL-based features, together with the criteria used to select stable features across datasets.
+\item The XGBoost classification pipeline, Bayesian hyperparameter optimisation, decision thresholds, and comparison with baseline and neural-network models.
+\item The evaluation measures used to assess classification quality, cross-dataset generalisation, training and inference time, and memory requirements.
+\item The proposed browser plug-in workflow, including allowlist and blocklist checks and the presentation of URL risk categories to users.
+\item The reported strengths, limitations, practical deployment considerations, and possible directions for future research.
+\end{itemize}
+
+The report focuses on explaining and analysing the methods and results presented by Misiek and Hyla. It does not include independent data collection, model training, statistical re-analysis, or implementation of a complete production-ready browser extension. All numerical results and performance claims are attributed to the original authors; no independent reproduction is claimed.\cite{bib1}

@@ -1,0 +1,58 @@
+\chapter{\MakeUppercase{Background}}
+\setcounter{equation}{0}
+
+\section{{Stroke and Motor Impairment}}
+
+Stroke can damage brain regions responsible for controlling voluntary movement. Depending on the
+location and severity of the damage, patients may experience weakness, abnormal muscle tone,
+reduced joint movement and difficulty maintaining balance. Lower-limb impairment can affect walking,
+standing and the ability to perform daily activities independently.
+Recovery is influenced by several factors, including initial motor impairment, muscle spasticity, balance
+function, age and time elapsed since stroke. These factors make individual outcome prediction a
+complex problem.
+
+\section{{Brain–Computer Interface}}
+
+A Brain–Computer Interface establishes a communication pathway between brain activity and an
+external device without relying entirely on conventional muscle movement. In the selected study, a BCI
+system for lower-limb rehabilitation (BCI-LE) combines electroencephalogram (EEG) signal acquisition
+with a robotic ankle-stretching device.
+\begin{itemize}
+    \item EEG electrodes record the patient's brain activity.
+    \item The patient is instructed to imagine moving the affected ankle.
+    \item Signal-processing techniques extract relevant features from EEG signals.
+    \item A trained classifier identifies the intended motor imagery.
+    \item When the intended movement is recognized, the robotic device assists ankle movement.
+    \item The patient receives visual and proprioceptive feedback during the process.
+\end{itemize}
+The objective is to associate intended movement with assisted physical movement. This may support
+rehabilitation through repeated, feedback-based training. However, patients can differ in their response
+to BCI therapy, making outcome prediction an important research problem.\cite{bib3}
+
+
+\section{Machine Learning in Rehabilitation}
+Machine learning enables computer systems to learn relationships from data and use these patterns to
+make predictions. In stroke rehabilitation, patient information can include demographic details, clinical
+assessment scores and biomechanical measurements.
+Regression estimates a continuous numerical outcome, such as a post-treatment FMA-LE score.
+Classification assigns a patient to a category, such as responder or non-responder, based on the
+response definition used in the study. The selected paper evaluates univariate and multivariate linear
+regression for continuous prediction, and Elastic Net and Artificial Neural Network models for
+classification.\cite{bib1}
+\section{Explainable Artificial Intelligence}
+Explainable Artificial Intelligence (XAI) refers to methods that help people understand the reasoning
+behind machine-learning predictions. In medical applications, clinicians need to understand which
+features influence an estimated outcome.
+The selected paper uses stepwise multivariate linear regression to select predictors associated with
+post-treatment motor function and SHAP to estimate feature contributions to classification predictions.
+These methods help connect model predictions with clinically meaningful characteristics, but they do
+not prove causation.\cite{bib1}
+
+\section{Important Clinical Assessment Measures}
+Explainable Artificial Intelligence (XAI) refers to methods that help people understand the reasoning
+behind machine-learning predictions. In medical applications, clinicians need to understand which
+features influence an estimated outcome.
+The selected paper uses stepwise multivariate linear regression to select predictors associated with
+post-treatment motor function and SHAP to estimate feature contributions to classification predictions.
+These methods help connect model predictions with clinically meaningful characteristics, but they do
+not prove causation.\cite{bib1}

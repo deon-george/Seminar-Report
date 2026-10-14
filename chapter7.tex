@@ -1,0 +1,117 @@
+\chapter{\MakeUppercase{Key Findings / Results from the Paper}}
+\setcounter{equation}{0}
+
+\noindent\textbf{Attribution:} The experimental results, performance values, tables, and figures discussed in this chapter are based on the findings reported by Sun et al. in the selected base paper. These results are reported by the original authors and were not independently reproduced as part of this seminar.\cite{bib1}
+
+\section{{Evaluation Metrics}}
+
+The performance of the machine learning models was evaluated using regression and classification metrics. Regression analysis was used to predict the lower-limb motor function outcome of stroke patients, while classification was used to distinguish between responders and non-responders to Brain--Computer Interface (BCI) rehabilitation. Explainable Artificial Intelligence (XAI) techniques were also used to identify the important features influencing the predictions.\cite{bib1}
+
+\subsection{{Regression Performance}}
+
+Regression analysis was performed to examine the relationship between the patients' baseline characteristics and their post-intervention motor function, measured using the Fugl--Meyer Assessment of the Lower Extremity (FMA-LE). Both univariate and multivariate regression models were evaluated.
+
+The univariate regression model achieved an adjusted $R^2$ value of 0.758, whereas the multivariate regression model achieved an adjusted $R^2$ value of 0.852. This indicates that the multivariate model provided a better fit to the observed outcomes in the studied dataset.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Images/regression_results.png}
+    \caption{Univariate and Multivariate Regression Performance for Predicting Post-Intervention FMA-LE Scores}
+    \label{fig:regression_results}
+\end{figure}
+
+
+
+Figure~\ref{fig:regression_results} presents the regression results by comparing observed and predicted FMA-LE scores. The findings demonstrate the potential of combining multiple baseline features to predict rehabilitation outcomes more effectively than using a single feature.
+
+\subsection{{Classification Performance}}
+
+The study compared Elastic Net (EN) and Artificial Neural Network (ANN) models for classifying patients as responders or non-responders. The models were evaluated using accuracy (ACC), area under the receiver operating characteristic curve (AUC), positive predictive value (PPV), and negative predictive value (NPV). Leave-One-Out Cross-Validation (LOOCV) was used for model evaluation.
+
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+\hline\hline
+\textbf{Metric} & \textbf{Elastic Net} & \textbf{ANN} \\
+\hline
+Accuracy (ACC) & 0.810 & 0.762 \\
+AUC & 0.782 & 0.771 \\
+PPV & 0.833 & 0.792 \\
+NPV & 0.778 & 0.722 \\
+Correct Predictions & 34/42 & 32/42 \\
+\hline\hline
+\end{tabular}
+\caption{Classification Performance of Elastic Net and ANN}
+\label{tab:classification_results}
+\end{table}
+
+
+The results indicate that Elastic Net performed better than ANN across all the reported classification metrics. Elastic Net achieved an accuracy of 81.0\%, correctly classifying 34 out of 42 patients, while ANN achieved an accuracy of 76.2\%, correctly classifying 32 patients. These results suggest that Elastic Net was the better-performing classifier in the evaluated dataset.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Images/classification_results.png}
+    \caption{Confusion Matrices and ROC Curves for Elastic Net and ANN Models}
+    \label{fig:classification_results}
+\end{figure}
+
+Figure~\ref{fig:classification_results} illustrates the classification performance using confusion matrices and ROC curves. These visualizations help compare the predictive performance of the two models.
+
+\section{{Analysis of Important Predictors}}
+
+The study investigated which baseline patient characteristics were associated with rehabilitation outcomes. The dataset included 42 patients and 18 baseline features, consisting of four demographic features, eight clinical features, and six biomechanical features.
+
+Stepwise multiple linear regression identified baseline FMA-LE, Berg Balance Rehabilitation-related measure (BBR), Modified Ashworth Scale (MAS), and age as important predictors in the reported regression analysis.
+
+The Explainable AI analysis using SHapley Additive exPlanations (SHAP) provided additional insight into the contribution of individual features to model predictions.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Images/shap_feature_importance.png}
+    \caption{SHAP Feature Importance and Contribution Analysis for Elastic Net and ANN Models}
+    \label{fig:shap_importance}
+\end{figure}
+
+\newpage
+Figure~\ref{fig:shap_importance} presents the feature importance results and SHAP visualizations for the two models. Baseline FMA-LE and MAS were among the most important features for both models. The third highly ranked feature differed: PASS for Elastic Net and BBS for ANN.
+
+These findings indicate that baseline motor function, muscle spasticity, and balance-related characteristics contributed to the models' predictions. However, feature importance indicates predictive contribution or association and does not establish a causal relationship.
+
+\section{{Insights from Responder Classification}}
+
+The study classified patients into responders and non-responders based on their recovery proportion. The recovery proportion was calculated using the change in FMA-LE score relative to the maximum possible improvement from the baseline score.
+
+\begin{equation}
+RP = \frac{FMA_{\text{post}}-FMA_{\text{pre}}}
+{FMA_{\text{max}}-FMA_{\text{pre}}}
+\end{equation}
+
+where $FMA_{\text{pre}}$ represents the pre-intervention score, $FMA_{\text{post}}$ represents the post-intervention score, and $FMA_{\text{max}}$ represents the maximum possible FMA-LE score.
+
+The study used a classification threshold of 0.25, based on the rounded median recovery proportion reported by the authors, to distinguish responders from non-responders. This threshold was specific to the study's dataset and methodology and should not be interpreted as a universal clinical cutoff for all stroke patients.
+
+\section{{Key Findings}}
+
+The major findings of the study are summarized below:
+
+\begin{itemize}
+    \item The study analysed baseline data from 42 stroke patients to predict their response to BCI-based rehabilitation.
+
+    \item Multivariate regression achieved an adjusted $R^2$ of 0.852, compared with 0.758 for univariate regression.
+
+    \item Elastic Net achieved an accuracy of 81.0\%, outperforming ANN, which achieved 76.2\% accuracy.
+
+    \item Elastic Net correctly classified 34 out of 42 patients, while ANN correctly classified 32 out of 42 patients.
+
+    \item Baseline FMA-LE, muscle spasticity, and balance-related features were important predictors identified through the regression and SHAP analyses.
+
+    \item SHAP improved the interpretability of the machine learning models by showing how individual baseline features contributed to predictions.
+
+    \item The results support the potential use of explainable machine learning for personalized BCI rehabilitation planning, although further validation using larger and independent patient datasets is required.
+\end{itemize}
+
+\section{{Summary}}
+
+The results demonstrate that multimodal baseline data can help predict the response of stroke patients to BCI-based rehabilitation. Multivariate regression showed a better fit than univariate regression, and Elastic Net achieved better classification performance than ANN in the evaluated dataset. SHAP analysis helped identify important predictors and provided insight into the models' decisions. Although these findings are promising, the relatively small dataset of 42 patients means that further research is necessary before applying the models to broader clinical populations.

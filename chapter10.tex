@@ -1,0 +1,53 @@
+\chapter{\MakeUppercase{Advantages and Limitations}}
+\setcounter{equation}{0}
+
+\section{{Advantages}}
+
+\subsection{{Use of Multimodal Data}}
+
+The framework combines demographic, clinical, and biomechanical features, providing a broader description of a patient's baseline condition than relying on a single measurement alone.
+
+\subsection{{Improved Regression Performance}}
+
+The multivariate regression model achieved a higher adjusted $R^2$ value than the univariate model. This demonstrates the potential benefit of combining selected patient characteristics to predict post-treatment motor function.
+
+\subsection{{Comparison of Classification Models}}
+
+The study evaluates Elastic Net (EN) and Artificial Neural Network (ANN) models, allowing comparison of different approaches for predicting patients' responses to BCI-based rehabilitation.
+
+\subsection{{Explainability}}
+
+Stepwise regression and SHapley Additive exPlanations (SHAP) help identify factors associated with predictions, improving the interpretability of the machine learning mels.
+
+\subsection{{Support for Personalized Care}}
+
+By identifying important patient characteristics, the framework may help inform individualized rehabilitation planning and support further clinical research.
+
+\section{{Limitations}}
+
+\subsection{{Small Sample Size}}
+
+The final analysis included only 42 patients. This limits confidence in generalizing the results to larger and more diverse patient populations.
+
+\subsection{{Limited Treatment Duration}}
+
+The study evaluated outcomes following a two-week intervention. Longer follow-up studies are needed to understand whether the predictions remain informative over time
+\subsection{{Limited Generalizability}}
+
+The study involved a specific patient group receiving a particular form of BCI-based robotic rehabilitation. Results may differ for other patient populations, treatment protocols, and healthcare settings.
+
+\subsection{{Additional Data Sources}}
+
+The predictive framework did not include additional neuroimaging information, such as diffusion tensor imaging, or other electrophysiological measurements that may provide useful information about recovery.
+
+\subsection{{Variation in BCI Control Ability}}
+
+Some factors affecting a patient's ability to control the BCI system were not included in the predictive framework. Incorporating these factors may help improve future models.
+
+\subsection{{Need for Clinical Validation}}
+
+Good predictive performance in a small research dataset does not establish readiness for clinical deployment. Independent validation and studies evaluating practical clinical impact are necessary.
+
+\subsection{{Interpretability Is Not Causality}}
+
+SHAP and stepwise regression help explain feature contributions and associations in model predictions. However, they do not establish causal relationships between patient characteristics and rehabilitation outcomes.

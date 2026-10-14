@@ -1,0 +1,78 @@
+\chapter{\MakeUppercase{Literature Review}}
+\setcounter{equation}{0}
+
+\section{{Current Approaches}}
+
+\subsection{{Univariate Prediction Models}}
+Univariate prediction models use a single patient characteristic to predict rehabilitation outcomes. In stroke rehabilitation, these models may consider baseline lower-limb motor function, muscle spasticity, or balance ability individually. They help identify the relationship between one clinical factor and the patient's recovery after Brain–Computer Interface (BCI) therapy. However, rehabilitation outcomes depend on several interacting factors, so using only one variable may not provide a complete prediction of treatment response. The selected research paper compares single-variable prediction models with a multimodal approach to investigate the benefit of considering multiple patient characteristics together. [1]\cite{bib3}
+
+\subsection{{Elastic Net Regression}}
+Elastic Net is a machine learning method that combines the properties of Lasso and Ridge regression. It is useful when a dataset contains several potentially related patient characteristics. In the selected study, Elastic Net was used for predicting rehabilitation outcomes and classifying patients according to their response to BCI therapy. By considering multiple input features, the model can identify relevant predictors while controlling model complexity. This makes it suitable for clinical datasets in which demographic, clinical, and biomechanical variables may be related to one another. [1]
+
+\subsection{{Artificial Neural Networks (ANN)}}
+Artificial Neural Networks are machine learning models inspired by the way biological neurons process information. They learn patterns from input data by adjusting the connections between artificial neurons during training. In stroke rehabilitation prediction, an ANN can analyse combinations of patient characteristics to estimate their likely response to BCI treatment. The selected research paper uses ANN as one of the prediction methods and compares its performance with Elastic Net. Such comparisons help assess how different modelling techniques perform when predicting rehabilitation outcomes from multimodal patient data. [1]
+
+\subsection{{Explainable Artificial Intelligence (XAI)}}
+Explainable Artificial Intelligence aims to make the predictions of machine learning models easier for humans to understand. In healthcare, prediction accuracy alone may not be sufficient because clinicians also need to understand which patient characteristics influence the results. The selected research uses SHapley Additive exPlanations (SHAP) to interpret model predictions and identify influential factors associated with rehabilitation outcomes. The analysis highlights baseline motor function, muscle spasticity, and balance ability as important predictors. This information can support clinicians in understanding model outputs and planning more personalized rehabilitation strategies. [1]
+
+\section{{Limitations of Existing Approaches}}
+
+Predicting the response of stroke patients to BCI rehabilitation is challenging because patients differ in their initial motor function, clinical condition, and physical abilities. Approaches that rely on a single patient characteristic may not capture the combined influence of demographic, clinical, and biomechanical factors. As a result, their predictions may provide an incomplete representation of the patient's expected recovery.
+
+Another challenge is the limited availability of clinical datasets containing diverse patient information. The selected study analysed data from 42 subacute stroke patients drawn from a larger randomized controlled trial. Although these data provide useful insights, the relatively small sample size limits the extent to which the findings can be generalized to other patient populations. Further validation using larger and more diverse datasets would help establish the reliability of the prediction models.
+
+Machine learning models also differ in their ability to learn complex relationships from patient data. A model that performs well on one dataset may not achieve the same performance in another clinical setting. Therefore, evaluating models using suitable validation methods is essential to understand their predictive reliability. The selected study used leave-one-out cross-validation (LOOCV) to evaluate the models.
+
+Furthermore, complex machine learning models may not clearly explain why a particular prediction was produced. This lack of interpretability can make it difficult for healthcare professionals to understand and confidently use model outputs. Explainable AI techniques such as SHAP help address this issue by identifying the contribution of individual features to predictions. However, feature importance indicates predictive association and does not establish that a particular characteristic directly causes better recovery.
+
+These limitations highlight the need for a multimodal prediction framework that combines different types of patient information, evaluates prediction performance systematically, and provides interpretable explanations. The selected study addresses these needs by comparing prediction models and using XAI to identify important factors associated with patients' responses to BCI rehabilitation. [1]
+\cite{bib1}
+\\
+\\
+%\begin{figure}[h]
+ %   \centering
+ %   \includegraphics[width=1.00\linewidth]{fig1.png}
+ %  \caption{Workflow of the AIGC and their variants’ generation process, AIGC prediction %with AIGC Detectors, and comparative
+%analysis of AIGC Detector outputs with accuracy metrics.}
+%\end{figure}
+%\\
+
+\section{Comparison with the Selected Paper}
+
+\vspace{-0.3cm}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+
+\begin{tabular}{|p{2.2cm}|p{3.8cm}|p{5.0cm}|}
+\hline
+\textbf{Approach} & \textbf{Focus} & \textbf{Relationship to the Selected Paper} \\
+\hline
+
+Univariate Prediction
+& Predicts outcomes using one patient characteristic at a time.
+& Provides a baseline for comparison with multimodal prediction. \\
+\hline
+
+Elastic Net Regression
+& Predicts outcomes while controlling model complexity and selecting relevant features.
+& Used as one of the machine learning models in the study. \\
+\hline
+
+Artificial Neural Network (ANN)
+& Learns complex patterns and relationships in patient data.
+& Provides an alternative prediction model for comparison with Elastic Net. \\
+\hline
+
+Explainable AI (SHAP)
+& Explains feature contributions to model predictions.
+& Helps identify influential factors associated with BCI rehabilitation outcomes \cite{bib1}. \\
+\hline
+
+\end{tabular}
+
+\caption{Comparison of Prediction Approaches with the Selected Research Paper}
+\end{table}

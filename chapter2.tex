@@ -1,58 +1,13 @@
-\chapter{\MakeUppercase{Background}}
+\chapter{Background}
 \setcounter{equation}{0}
+\section{URL-Based Phishing Detection}
+A URL contains structural and lexical information that can be used to estimate whether it is suspicious. Examples include total URL length, the number of subdomain components, the presence of brand-related keywords, authentication-related keywords, nameserver counts, DNS information, HTTPS presence, and domain registration age. These signals are imperfect individually: legitimate and malicious URLs can share similar characteristics, and their usefulness may vary across datasets.\cite{bib1}
 
-\section{{Stroke and Motor Impairment}}
+\section{Machine Learning for Structured Features}
+The paper uses Extreme Gradient Boosting (XGBoost), an ensemble method that builds decision trees sequentially to improve predictions. XGBoost is suited to structured/tabular features, supports missing values, and provides feature-importance information. These properties make it attractive for security applications where training efficiency and an interpretable feature-level view are useful. The paper compares its performance with a neural network, noting that the neural network can have faster inference and a smaller model despite requiring more training time in the reported experiment.\cite{bib1}
 
-Stroke can damage brain regions responsible for controlling voluntary movement. Depending on the
-location and severity of the damage, patients may experience weakness, abnormal muscle tone,
-reduced joint movement and difficulty maintaining balance. Lower-limb impairment can affect walking,
-standing and the ability to perform daily activities independently.
-Recovery is influenced by several factors, including initial motor impairment, muscle spasticity, balance
-function, age and time elapsed since stroke. These factors make individual outcome prediction a
-complex problem.
+\section{Cross-Dataset Validation}
+A random train/test split from one dataset can overestimate real-world performance if both partitions share similar collection practices, URL structures, or temporal patterns. Cross-dataset validation evaluates a model on data drawn from a different source. It exposes whether learned patterns transfer to different URL populations. Prior work discussed in the paper reports F1-score decreases of 10--32\% under dataset shift, motivating evaluation beyond a single dataset.\cite{bib1}
 
-\section{{Brain–Computer Interface}}
-
-A Brain–Computer Interface establishes a communication pathway between brain activity and an
-external device without relying entirely on conventional muscle movement. In the selected study, a BCI
-system for lower-limb rehabilitation (BCI-LE) combines electroencephalogram (EEG) signal acquisition
-with a robotic ankle-stretching device.
-\begin{itemize}
-    \item EEG electrodes record the patient's brain activity.
-    \item The patient is instructed to imagine moving the affected ankle.
-    \item Signal-processing techniques extract relevant features from EEG signals.
-    \item A trained classifier identifies the intended motor imagery.
-    \item When the intended movement is recognized, the robotic device assists ankle movement.
-    \item The patient receives visual and proprioceptive feedback during the process.
-\end{itemize}
-The objective is to associate intended movement with assisted physical movement. This may support
-rehabilitation through repeated, feedback-based training. However, patients can differ in their response
-to BCI therapy, making outcome prediction an important research problem.\cite{bib3}
-
-
-\section{Machine Learning in Rehabilitation}
-Machine learning enables computer systems to learn relationships from data and use these patterns to
-make predictions. In stroke rehabilitation, patient information can include demographic details, clinical
-assessment scores and biomechanical measurements.
-Regression estimates a continuous numerical outcome, such as a post-treatment FMA-LE score.
-Classification assigns a patient to a category, such as responder or non-responder, based on the
-response definition used in the study. The selected paper evaluates univariate and multivariate linear
-regression for continuous prediction, and Elastic Net and Artificial Neural Network models for
-classification.\cite{bib1}
-\section{Explainable Artificial Intelligence}
-Explainable Artificial Intelligence (XAI) refers to methods that help people understand the reasoning
-behind machine-learning predictions. In medical applications, clinicians need to understand which
-features influence an estimated outcome.
-The selected paper uses stepwise multivariate linear regression to select predictors associated with
-post-treatment motor function and SHAP to estimate feature contributions to classification predictions.
-These methods help connect model predictions with clinically meaningful characteristics, but they do
-not prove causation.\cite{bib1}
-
-\section{Important Clinical Assessment Measures}
-Explainable Artificial Intelligence (XAI) refers to methods that help people understand the reasoning
-behind machine-learning predictions. In medical applications, clinicians need to understand which
-features influence an estimated outcome.
-The selected paper uses stepwise multivariate linear regression to select predictors associated with
-post-treatment motor function and SHAP to estimate feature contributions to classification predictions.
-These methods help connect model predictions with clinically meaningful characteristics, but they do
-not prove causation.\cite{bib1}
+\section{Feature Importance and Stability}
+Feature importance estimates which input variables contribute to a model's decisions. However, a feature can be highly predictive in one dataset and weak in another because collection methods and class distributions differ. X-PHIDE therefore examines both predictive importance and stability across datasets, seeking features that remain useful in different environments. Feature importance is an explanatory signal, not proof of causation.

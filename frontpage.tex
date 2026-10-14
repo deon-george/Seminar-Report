@@ -25,7 +25,7 @@
 
 \thispagestyle{empty}
 \begin{center}
-  {\Large \bf \MakeUppercase{PREDICTING STROKE PATIENTS' REHABILITATION OUTCOMES USING EXPLAINABLE AI} }
+  {\Large \bf \MakeUppercase{XGBOOST-BASED URL PHISHING DETECTION METHOD WITH CROSS-DATASET VALIDATION} }
   \\
   
 \vspace*{1.15 cm}
@@ -33,7 +33,7 @@
 
 
    \vspace*{0.1cm}
-   {\large Submitted by\\\vspace*{0.6cm} { \bf KARTHIK KRISHNAN \\Reg. No: SJC23CS143}\\
+   {\large Submitted by\\\vspace*{0.6cm} { \bf DEON GEORGE \\Reg. No: SJC23CS086}\\
  }
   {\large to\\[-0.6mm] the APJ Abdul Kalam Technological University\\[-0.6mm] in partial fulfillment of the requirements for the award of the degree\\[-0.6mm] of\\[-0.6mm] Bachelor of Technology\\[-0.6mm] in\\[-0.6mm] {\emph { \textbf{Computer Science and Engineering}}}
   \vspace*{1cm}
@@ -69,7 +69,7 @@
 % \normalsize 
 % This is to certify that the seminar report entitled {\bf ``DEEP LEARNING BASED OBJECT DETECTION FOR VISUALLY IMPAIRED PEOPLE$\textbf{"}$} submitted by { \bf JOHNS RAJU (SJC20CS069)} to the APJ Abdul Kalam Technological University in partial fulfillment of the requirements for the award of the Degree of Bachelor of Technology in Computer Science and Engineering is a bonafide report of the seminar presented by him under my guidance and supervision.\vspace{1.3 cm}\\
 % { Supervisor}\hspace{9.1 cm}{ Seminar Coordinator}\\
-% Prof. Thushara Sukumar\hspace{6.9cm}Dr. Joby P P\\ Assistant Professor\hspace{7.8cm} Professor \& Head\\Department of CSE\hspace{7.7 cm} Department of CSE\
+% Prof. Mary Thresa\hspace{6.9cm}Dr. Joby P P\\ Assistant Professor\hspace{7.8cm} Professor \& Head\\Department of CSE\hspace{7.7 cm} Department of CSE\
 % \vspace{1.3 cm}\\
 
 % \textcolor{white}{.}\hspace{10.4 cm}{Head of the Department}
@@ -98,11 +98,11 @@
 {\large \bf{CERTIFICATE}}\\[0.25cm]
 \end{center}
 \normalsize 
-This is to certify that the seminar report entitled {\bf``PREDICTING STROKE PATIENTS' REHABILITATION OUTCOMES USING EXPLAINABLE AI''} submitted by {\bf KARTHIK KRISHNAN
-(SJC23CS143) } to the APJ Abdul Kalam Technological University  in partial fulfillment of the requirements for the award of
+This is to certify that the seminar report entitled {\bf``XGBOOST-BASED URL PHISHING DETECTION METHOD WITH CROSS-DATASET VALIDATION''} submitted by {\bf DEON GEORGE
+(SJC23CS086) } to the APJ Abdul Kalam Technological University  in partial fulfillment of the requirements for the award of
 the degree of Bachelor of Technology in Computer Science and Engineering is a bonafide
 report of the seminar presented by him under my guidance and supervision.\vspace{1.3 cm}\\
-{\bf Supervisor}\hspace{8.9 cm}{\bf Seminar Coordinator}\\ Prof. Thushara Sukumar
+{\bf Supervisor}\hspace{8.9 cm}{\bf Seminar Coordinator}\\ Prof. Mary Thresa
  \hspace{7.5cm}Prof. Sarju S \\ Assistant Professor\hspace{7.6cm} Assistant Professor \hspace{8.6cm} \\ Department of CSE \hspace{7.3 cm} Department of CSE
 \vspace{1.3 cm}\\
  .\hspace{10.6 cm}{ \bf Head of the Department}
@@ -132,8 +132,8 @@ to undertake this seminar work.
 support and facilities for the successful completion of this seminar work.
 I am also greatly indebted to our Head of the Department, Dr. Joby P P, Professor in the Department of Computer Science and Engineering, for the invaluable suggestions and encouragement throughout my seminar work.
 \\[-0.3cm]
-\\I would also like to express my heartfelt gratitude to Prof. Sarju S and Prof. Ariyamol P G, Seminar Coordinators of the Department of Computer Science and Engineering, for their valuable guidance, constant encouragement, and dedicated efforts in coordinating the seminar activities. I owe a profound debt of gratitude to my seminar guide, Mrs. Thushara Sukumar,
-Assistant Professor in Computer Science and Engineering,
+\\I would also like to express my heartfelt gratitude to Prof. Sarju S and Prof. Ariyamol P G, Seminar Coordinators of the Department of Computer Science and Engineering, for their valuable guidance, constant encouragement, and dedicated efforts in coordinating the seminar activities. I owe a profound debt of gratitude to my seminar guide, Prof. Mary Thresa,
+Associate Professor in Computer Science and Engineering,
 who showed a keen interest in my seminar and guided me until its completion by providing
 all the necessary information.
 \\[-0.3cm]
@@ -143,7 +143,7 @@ played a pivotal role in the successful completion of my seminar work. Additiona
 like to extend my sincere appreciation to all the laboratory staff for their timely support.
 \\
 \begin{flushright}
-    Karthik Krishnan
+    Deon George
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,7 +168,7 @@ like to extend my sincere appreciation to all the laboratory staff for their tim
 \end{center}
 {\normalsize
 \begin{spacing}{1.0}
-Brain--Computer Interface (BCI) technology offers a promising approach to improving lower-limb motor recovery after stroke, but patients respond differently to BCI therapy. Predicting each patient's response, measured as improvement in lower-limb motor function, is therefore important. This study presents an Explainable Artificial Intelligence (XAI) framework that predicts stroke rehabilitation outcomes from multimodal behavioral data. It uses a private clinical dataset of 42 subacute stroke patients drawn from a larger randomized controlled trial of 167 patients. Before rehabilitation, the study collected demographic information (age, gender, stroke type, and time since stroke), clinical assessments (lower-limb motor function, muscle spasticity, balance, walking ability, and activities of daily living), and biomechanical measurements (ankle joint range of motion and muscle strength). Elastic Net (EN) and Artificial Neural Network (ANN) models analyzed these data to predict outcomes after two weeks of BCI therapy. SHapley Additive exPlanations (SHAP) identified the factors most influential to recovery. Baseline motor function, muscle spasticity, and balance ability emerged as the strongest predictors of successful rehabilitation. Compared with single-variable prediction models, the multimodal approach achieved higher prediction accuracy while offering transparent, interpretable insights for clinical decision-making. The findings demonstrate that XAI can support personalized rehabilitation planning by helping clinicians identify patients most likely to benefit from BCI therapy and optimize treatment strategies to improve recovery outcomes.
+Phishing URLs are frequently used to deceive users into revealing sensitive information, transferring money, or accessing malicious resources. Machine-learning-based URL detection can provide early warnings, but models evaluated on a single dataset may not generalise well to URLs collected from different sources. This seminar reviews X-PHIDE, an XGBoost-based URL phishing detection method proposed by Misiek and Hyla. The study evaluates a custom dataset containing 75,738 URLs, the 639,723-URL GramBeddings dataset, and a feature-compatible subset of PhiUSIIL containing 47,103 URLs. More than 90 candidate URL and domain features are analysed, and eight features are selected using cross-dataset importance and stability criteria. Bayesian hyperparameter optimisation is used to tune XGBoost, and the system combines allowlist/blocklist checks with model predictions in a browser plug-in workflow. The reported model achieves 90.72\% accuracy and 91.16\% F1 on the custom test set, while F1 scores on GramBeddings and PhiUSIIL are 73.25\% and 69.37\%, respectively. In a comparison with a neural network, XGBoost trains 12.6 times faster and uses 3.6 times less memory, although the neural network has faster inference and a smaller model size. The results demonstrate the value of efficient tree-based detection and, importantly, show why cross-dataset validation is necessary. Continued monitoring, model updates, and independent testing remain important for practical deployment.\cite{bib1}
 
 \end{spacing}
 }
@@ -195,30 +195,17 @@ Brain--Computer Interface (BCI) technology offers a promising approach to improv
 \renewcommand{\footrulewidth}{0pt}
 
 \clearpage
-\nomenclature{BCI}{Brain--Computer Interface}
-\nomenclature{AI}{Artificial Intelligence}
-\nomenclature{XAI}{Explainable Artificial Intelligence}
-\nomenclature{FMA-LE}{Fugl-Meyer Assessment of Lower Extremity}
-\nomenclature{MLR}{Multiple Linear Regression}
-\nomenclature{ANN}{Artificial Neural Network}
-\nomenclature{SHAP}{SHapley Additive exPlanations}
-\nomenclature{LOOCV}{Leave-One-Out Cross-Validation}
-\nomenclature{ACC}{Accuracy}
-\nomenclature{AUC}{Area Under the Curve}
-\nomenclature{PPV}{Positive Predictive Value}
-\nomenclature{NPV}{Negative Predictive Value}
-\nomenclature{MAS}{Modified Ashworth Scale}
-\nomenclature{PASS}{Postural Assessment Scale for Stroke}
-\nomenclature{BBS}{Berg Balance Scale}
-\nomenclature{EN}{Elastic Net}
-\nomenclature{ROC}{Receiver Operating Characteristic}
-\nomenclature{CV}{Cross-Validation}
-\nomenclature{RP}{Recovery Proportion}
+\nomenclature{URL}{Uniform Resource Locator}
+\nomenclature{XGBoost}{Extreme Gradient Boosting}
 \nomenclature{ML}{Machine Learning}
-\nomenclature{R$^2$}{Coefficient of Determination}
-\nomenclature{BCI-LE}{Brain--Computer Interface-Assisted Lower Extremity Rehabilitation}
-\nomenclature{FMA}{Fugl-Meyer Assessment}
-\nomenclature{SD}{Standard Deviation}
+\nomenclature{DNS}{Domain Name System}
+\nomenclature{HTTPS}{Hypertext Transfer Protocol Secure}
+\nomenclature{F1}{F1 score}
+\nomenclature{ROC}{Receiver Operating Characteristic}
+\nomenclature{CV}{Coefficient of Variation}
+\nomenclature{LLM}{Large Language Model}
+\nomenclature{AUC}{Area Under the Curve}
+\nomenclature{ONNX}{Open Neural Network Exchange}
 \nomenclature{TP}{True Positive}
 \nomenclature{TN}{True Negative}
 \nomenclature{FP}{False Positive}

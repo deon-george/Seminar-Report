@@ -1,24 +1,16 @@
-\chapter{\MakeUppercase{Future Scope}}
+\chapter{Future Scope}
 \setcounter{equation}{0}
+\section{Directions Discussed in the Paper}
+The paper identifies opportunities for improving deployment efficiency and adapting to changing URL patterns. These include model compression, automatic retraining, multi-model ensembles, and runtime validation using checks such as landing-page rendering and WHOIS/DNS lookups alongside static model predictions.\cite{bib1}
 
-\section{{Authors' Future Directions}}
-
-The selected paper investigates the prediction of stroke patients' responses to Brain--Computer Interface (BCI)-based rehabilitation using multimodal patient data and Explainable Artificial Intelligence (XAI). Any specific future-work directions attributed to the authors should be verified against the original paper and cited before final submission.
-
-\section{{Possible Improvements Proposed in This Seminar}}
-
+\section{Possible Extensions}
 \begin{itemize}
-    \item \textbf{Larger and Diverse Datasets:} Evaluate the models using larger patient populations from different clinical settings to improve generalizability.
-
-    \item \textbf{Long-Term Outcome Prediction:} Investigate whether baseline patient characteristics can predict rehabilitation outcomes over longer follow-up periods.
-
-    \item \textbf{Additional Data Sources:} Incorporate neuroimaging, electrophysiological measurements, and other relevant clinical features to investigate potential improvements in prediction.
-
-    \item \textbf{BCI Control Ability:} Include factors affecting patients' ability to control the BCI system to investigate whether they improve treatment-response prediction.
-
-    \item \textbf{Model Validation and Optimization:} Evaluate the models using independent datasets and investigate methods to improve predictive performance and reliability.
-
-    \item \textbf{Enhanced Explainability:} Explore additional XAI techniques to improve understanding of model predictions and their relevance to rehabilitation planning.
+\item \textbf{Model compression:} Investigate tree pruning and export formats such as ONNX or Treelite, including quantisation where appropriate, to reduce runtime and storage requirements.
+\item \textbf{Automated model refresh:} Develop a monitored retraining pipeline using newly verified phishing and legitimate URLs, with safeguards against poisoned labels.
+\item \textbf{Ensemble detection:} Evaluate combinations of gradient-boosted trees, neural methods, and other classifiers to determine whether complementary signals improve robust performance.
+\item \textbf{Runtime checks:} Combine URL features with carefully selected live DNS, WHOIS, redirect, and page-level signals, while measuring the extra latency and privacy implications.
+\item \textbf{Broader browser support:} Test performance and usability across browsers and operating environments.
+\item \textbf{Continuous evaluation:} Report precision, recall, F1, false-positive rate, latency, and memory on temporally separated and independent datasets.
 \end{itemize}
 
-These are possible research extensions proposed in this seminar. They should not be interpreted as confirmed future-work statements by the original authors or as improvements already demonstrated by the study.
+These are potential research and engineering extensions; they should not be interpreted as improvements already validated by the paper.

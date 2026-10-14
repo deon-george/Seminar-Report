@@ -1,11 +1,15 @@
-Updated seminar report chapter structure
+Updated seminar report: XGBoost-Based URL Phishing Detection Method With Cross-Dataset Validation
 
-Compile thesis.tex from this project directory with pdfLaTeX (at least twice).
-Title page and student details are preserved. Chapters 1--11 now follow the requested topic order; References follows Conclusion. Agenda and Course Outcomes have been removed. The report is not a Beamer slide deck.
+The report content has been revised using the seminar presentation and the IEEE Access paper by Misiek and Hyla (2026), DOI: 10.1109/ACCESS.2026.3672690.
 
-Before final submission:
-2. Verify guide, dates, title-page details and the existing abstract.
-3. Verify reproduced numerical values and figures against the selected paper. Results are explicitly attributed to Hong and Kim.
-4. Complete original-paper references for DP-NeRF and ActiveNeRF and verify all existing bibliographic metadata. Existing references were preserved in numbered IEEE-style format; no missing publication details were invented.
+Contents:
+- Seminar_Report_2026_Final.pdf: compiled report (38 pages)
+- thesis.tex and chapter1.tex through chapter12.tex: LaTeX source
+- ref.tex: references
+- frontpage.tex: title page, certificate, acknowledgement, abstract, and abbreviations
+- dmathesis.cls, format.tex, showlabel.sty, and SJCET_logo.jpg: files required to compile
 
-Unrelated disabled AI-generated-code and DevSecOps chapters were removed/replaced. Image paths were repaired for compilation from the project root.
+To compile from this directory, run:
+  latexmk -pdf thesis.tex
+
+The report summarizes the source paper and attributes its numerical findings to the original authors; it does not claim independent reproduction of the experiments. Please verify institutional names, dates, and approval/signature details before submission.

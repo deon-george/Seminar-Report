@@ -1,53 +1,24 @@
-# LaTeX build artifacts
+# LaTeX build output
 *.aux
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.lof
 *.log
+*.lot
 *.out
-*.pdf
+*.run.xml
 *.synctex.gz
 *.toc
-*.lof
-*.lot
-*.nlo
-*.nls
-*.run.xml
 *.xdv
-*.idx
-*.ilg
-*.ind
-*.maf
-*.mtc
-*.mtc0
-*.nav
-*.snm
-*.vrb
-*.gz
-*.ps
-*.dvi
 
-# Editor / OS files
+# Generated documents
+*.pdf
+
+# Editor and OS files
+*~
+.#*
 .DS_Store
-Thumbs.db
-*.swp
-*.tmp
-
-# VS Code
 .vscode/
-
-# Local generated files
-*.bak
-*.orig
-
-# Keep source files tracked, but ignore generated build outputs
-thesis.pdf
-thesis.log
-thesis.aux
-thesis.toc
-thesis.lof
-thesis.lot
-thesis.out
-thesis.synctex.gz

@@ -1,53 +1,23 @@
-\chapter{\MakeUppercase{Advantages and Limitations}}
+\chapter{Advantages and Limitations}
 \setcounter{equation}{0}
+\section{Advantages}
+\begin{itemize}
+\item \textbf{Efficient training:} XGBoost trained in 0.95 seconds in the reported benchmark, compared with 12.01 seconds for the neural network.
+\item \textbf{Structured data suitability:} The method works with engineered URL and domain features and does not require a deep-learning stack or GPU for the described deployment.
+\item \textbf{Feature interpretation:} Feature-importance scores help examine which URL characteristics influence the model.
+\item \textbf{Missing-value handling:} XGBoost can handle missing values in extracted features.
+\item \textbf{Browser use case:} The proposed pipeline is designed for URL assessment and risk display within a browser plug-in.
+\item \textbf{Evaluation breadth:} Cross-dataset testing exposes limitations that a single dataset evaluation may hide.
+\end{itemize}
 
-\section{{Advantages}}
+\section{Limitations}
+\begin{itemize}
+\item \textbf{Dataset shift:} F1 falls from 91.16\% on the custom test set to 73.25\% on GramBeddings and 69.37\% on PhiUSIIL.
+\item \textbf{Memory and inference trade-off:} XGBoost used more memory and had slower inference than the neural network in the reported comparison, despite faster training.
+\item \textbf{Feature dependence:} The importance of HTTPS and other signals differs across datasets.
+\item \textbf{Deployment scope:} The reported demonstration is limited to a single service and Chrome browser.
+\item \textbf{Update requirements:} The described system does not include an automatic retraining pipeline to adapt continuously to changing phishing tactics.
+\item \textbf{Residual risk:} No classifier can guarantee detection of every malicious URL; false positives and false negatives remain possible.
+\end{itemize}
 
-\subsection{{Use of Multimodal Data}}
-
-The framework combines demographic, clinical, and biomechanical features, providing a broader description of a patient's baseline condition than relying on a single measurement alone.
-
-\subsection{{Improved Regression Performance}}
-
-The multivariate regression model achieved a higher adjusted $R^2$ value than the univariate model. This demonstrates the potential benefit of combining selected patient characteristics to predict post-treatment motor function.
-
-\subsection{{Comparison of Classification Models}}
-
-The study evaluates Elastic Net (EN) and Artificial Neural Network (ANN) models, allowing comparison of different approaches for predicting patients' responses to BCI-based rehabilitation.
-
-\subsection{{Explainability}}
-
-Stepwise regression and SHapley Additive exPlanations (SHAP) help identify factors associated with predictions, improving the interpretability of the machine learning mels.
-
-\subsection{{Support for Personalized Care}}
-
-By identifying important patient characteristics, the framework may help inform individualized rehabilitation planning and support further clinical research.
-
-\section{{Limitations}}
-
-\subsection{{Small Sample Size}}
-
-The final analysis included only 42 patients. This limits confidence in generalizing the results to larger and more diverse patient populations.
-
-\subsection{{Limited Treatment Duration}}
-
-The study evaluated outcomes following a two-week intervention. Longer follow-up studies are needed to understand whether the predictions remain informative over time
-\subsection{{Limited Generalizability}}
-
-The study involved a specific patient group receiving a particular form of BCI-based robotic rehabilitation. Results may differ for other patient populations, treatment protocols, and healthcare settings.
-
-\subsection{{Additional Data Sources}}
-
-The predictive framework did not include additional neuroimaging information, such as diffusion tensor imaging, or other electrophysiological measurements that may provide useful information about recovery.
-
-\subsection{{Variation in BCI Control Ability}}
-
-Some factors affecting a patient's ability to control the BCI system were not included in the predictive framework. Incorporating these factors may help improve future models.
-
-\subsection{{Need for Clinical Validation}}
-
-Good predictive performance in a small research dataset does not establish readiness for clinical deployment. Independent validation and studies evaluating practical clinical impact are necessary.
-
-\subsection{{Interpretability Is Not Causality}}
-
-SHAP and stepwise regression help explain feature contributions and associations in model predictions. However, they do not establish causal relationships between patient characteristics and rehabilitation outcomes.
+The paper's results support practical potential but also show that deployment should include monitoring, maintenance, and independent evaluation.

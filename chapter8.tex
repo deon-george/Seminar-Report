@@ -1,96 +1,13 @@
-\chapter{\MakeUppercase{Results and Key Findings}}
+\chapter{Results and Analysis}
 \setcounter{equation}{0}
+\section{Feature Stability and Dataset Differences}
+The article compares feature importance across the custom, GramBeddings, and PhiUSIIL datasets. URL length was identified as a relatively robust feature, with reported mean importance of 0.0319 and coefficient of variation of 0.7843. HTTPS showed much greater variation in importance, from 0.125 in GramBeddings to 0.513 in PhiUSIIL. This is consistent with the observed dataset-dependent effect of HTTPS on accuracy.\cite{bib1}
 
-\noindent\textbf{Note:} The results presented in this chapter are taken from the selected research paper. They are not results from a separate implementation performed for this seminar.\cite{bib1}
+\section{Why Dataset Shift Matters}
+Datasets can differ in URL length distributions, HTTPS adoption, phishing prevalence, collection period, and source. A classifier may inadvertently learn patterns that distinguish the labels in one dataset but do not persist in another. Cross-dataset tests reveal this risk and give a more realistic view of the model's limits than a single random split.
 
-\section{{Regression Results}}
+\section{Evaluation Metrics}
+Accuracy measures the proportion of all samples classified correctly. Recall measures the proportion of phishing URLs detected. Specificity measures the proportion of legitimate URLs correctly identified. Precision measures how many URLs flagged as phishing are actually phishing, and the F1 score balances precision and recall. No single metric fully describes operational performance, so the paper reports several metrics and evaluates multiple datasets.\cite{bib1}
 
-The study compared a univariate model using baseline FMA-LE alone with a multivariate model combining a selected subset of demographic, clinical, and biomechanical characteristics.
-
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{lcc}
-\hline\hline
-\textbf{Metric} & \textbf{Univariate Model} & \textbf{Multivariate Model} \\
-\hline
-Adjusted $R^2$ & 0.758 & 0.852 \\
-P-value & $<0.001$ & $<0.001$ \\
-\hline\hline
-\end{tabular}
-\caption{Comparison of Univariate and Multivariate Regression Models}
-\label{tab:regression_results}
-\end{table}
-
-
-The multivariate model achieved an adjusted $R^2$ of 0.852, compared with 0.758 for the univariate model. This represents an increase of 0.094 in adjusted $R^2$. The result indicates that the selected combination of patient characteristics explained more variation in post-treatment FMA-LE scores than baseline FMA-LE alone.
-
-However, the reported model fit does not establish that the same performance will be achieved in a larger, independent patient population.
-
-\section{Classification Results}
-
-The study evaluated Elastic Net (EN) and Artificial Neural Network (ANN) models for classifying stroke patients as responders or non-responders to BCI-based rehabilitation.
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{lcc}
-\hline\hline
-\textbf{Metric} & \textbf{Elastic Net} & \textbf{ANN} \\
-\hline
-Accuracy (ACC) & 81.0\% & 76.2\% \\
-AUC & 0.782 & 0.771 \\
-PPV & 0.833 & 0.792 \\
-NPV & 0.778 & 0.722 \\
-Correctly Classified Patients & 34/42 & 32/42 \\
-\hline\hline
-\end{tabular}
-\caption{Classification Performance of Elastic Net and ANN Models}
-\label{tab:classification_performance}
-\end{table}
-
-
-Elastic Net achieved higher values than ANN across all four reported classification metrics. Its accuracy was 81.0\%, while ANN achieved 76.2\%. Elastic Net correctly classified 34 out of 42 participants, compared with 32 for ANN.
-
-These results indicate that Elastic Net performed better in the dataset and evaluation setup used in the study. However, they do not prove that Elastic Net is always superior to neural networks. Both models achieved AUC values above the chance-level reference of 0.5, but further validation is required before clinical deployment.
-
-\section{{Important Predictors Identified by XAI}}
-
-Explainable Artificial Intelligence (XAI) techniques were used to identify the patient characteristics that contributed to the prediction of rehabilitation outcomes.
-
-\subsection{{Baseline FMA-LE}}
-
-Baseline FMA-LE measures the patient's initial lower-limb motor function. It was identified as the strongest predictor of post-treatment FMA-LE in regression analysis and as one of the most important features in classification. Therefore, the initial level of motor impairment provides valuable information about subsequent recovery.
-
-\subsection{{Muscle Spasticity (MAS)}}
-
-The Modified Ashworth Scale (MAS) measures muscle spasticity. The study identified baseline spasticity as an important predictor of treatment response, suggesting that the initial condition of the affected muscles provides useful information for rehabilitation outcome prediction.
-
-\subsection{{Balance Function}}
-
-Balance-related measurements were also identified as important predictors. The specific measure varied across the analyses: BBR was selected in stepwise regression, while BBS and PASS were important in the classification models. This indicates that different analytical methods can identify different but related characteristics.
-
-\subsection{{Age and Other Clinical Characteristics}}
-
-Age was selected in stepwise regression along with baseline FMA-LE, BBR, and MAS. This finding suggests that rehabilitation outcome prediction can benefit from considering several aspects of a patient's condition rather than relying on a single characteristic.
-
-\section{{Interpretation of Results}}
-
-The major findings of the study can be summarized as follows:
-
-\begin{itemize}
-    \item Combining multiple patient characteristics improved the reported fit of the regression model.
-
-    \item Elastic Net outperformed ANN across the reported classification metrics in the evaluated dataset.
-
-    \item Baseline motor function, measured using FMA-LE, was consistently important for predicting rehabilitation outcomes.
-
-    \item Muscle spasticity and balance-related characteristics provided additional information about treatment response.
-
-    \item Explainable AI techniques, particularly SHAP, helped identify features contributing to the model predictions.
-\end{itemize}
-
-The results should be interpreted carefully. Feature importance does not establish that a feature independently causes recovery, and a predicted treatment response should not be considered a definitive medical decision. The findings are promising but require further validation using larger and independent patient datasets.
-
-\section{{Summary}}
-
-The study demonstrated the potential of combining demographic, clinical, and biomechanical data to predict stroke rehabilitation outcomes. The multivariate regression model achieved a higher adjusted $R^2$ than the univariate model, while Elastic Net performed better than ANN in the reported classification evaluation. XAI techniques helped identify important predictors, including baseline FMA-LE, muscle spasticity, balance function, and age. These findings may support future personalized rehabilitation planning, although additional clinical validation is necessary before practical deployment.
+\section{Interpretation}
+The evidence supports three conclusions. First, the selected features can support strong detection on the custom dataset. Second, performance declines on independent datasets, meaning the detector requires continued evaluation after deployment. Third, feature importance is contextual: a signal such as HTTPS may be useful in one dataset but nearly uninformative in another. The results do not imply that all future URL populations will achieve the same scores.

@@ -1,30 +1,23 @@
-\chapter{\MakeUppercase{Technology / Paper Overview}}
+\chapter{Technology and Paper Overview}
 \setcounter{equation}{0}
-
 \section{Selected Paper}
-J. Sun et al., "Multimodal Behavioral Data Predict Stroke Patient’s Response to BCI Treatment Through Explainable AI," in IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 34, pp. 1-9, 2026, doi: 10.1109/TNSRE.2025.3625222.\cite{bib1}
+M. Misiek and T. Hyla, ``XGBoost-Based URL Phishing Detection Method With Cross-Dataset Validation,'' \textit{IEEE Access}, vol. 14, 2026, pp. 43200--43212, doi: 10.1109/ACCESS.2026.3672690. The article was published online on 10 March 2026.\cite{bib1}
 
 \section{Objectives}
 \begin{itemize}
-    \item Investigate the relationship between baseline characteristics and post-treatment motor function.
-    \item Determine whether combining demographic, clinical and biomechanical features improves prediction.
-    \item Classify patients as responders or non-responders to BCI rehabilitation.
-    \item Compare Elastic Net and ANN for treatment-response classification.
-    \item Identify important predictors using stepwise regression and SHAP.
-    \item Provide interpretable evidence that may support personalized rehabilitation planning.
+\item Develop an XGBoost-based method to classify potentially malicious URLs.
+\item Evaluate the model on datasets from different sources rather than relying on a single split.
+\item Identify URL features that provide useful and stable signals across datasets.
+\item Tune the model using Bayesian hyperparameter optimisation.
+\item Compare detection metrics and computational characteristics with a neural network and baseline classifiers.
+\item Describe a browser plug-in workflow that labels URLs as safe, suspicious, or potentially harmful.
 \end{itemize}
 
-\section{Architecture}
-The proposed framework uses multimodal behavioral data collected before BCI rehabilitation to predict patients’ motor recovery outcomes after two weeks of treatment. The input data include demographic information, clinical assessment scores, and biomechanical measurements. These features are processed using regression and classification models, including Elastic Net and Artificial Neural Networks (ANN). Explainable AI techniques, particularly SHAP, are then used to identify the features that contribute to the predictions. The overall workflow and detailed methodology are presented in the next chapter. [1]
-\section{Key Contributions of the Authors}
+\section{Datasets}
+The authors use three datasets. The custom dataset contains 75,738 URLs assembled from PhishTank, AdaURL, the Kaggle Phishing URLs Dataset by Hassaan Mustafavi, and PhishDataset. GramBeddings contains 639,723 URLs and is used for feature analysis and cross-dataset evaluation. PhiUSIIL provides an independent evaluation set; the feature-compatible subset used in the experiments contains 47,103 URLs. These datasets differ in scale and URL characteristics, which makes them useful for studying generalisation.\cite{bib1}
 
-\begin{itemize}
-    \item Combines demographic, clinical, and biomechanical data to predict rehabilitation outcomes.
-    \item Evaluates prediction models for estimating post-treatment lower-limb motor function.
-    \item Classifies patients according to their response to BCI rehabilitation.
-    \item Compares the predictive performance of Elastic Net and ANN.
-    \item Uses explainable AI techniques to identify important recovery predictors.
-    \item Highlights the importance of baseline motor function, muscle spasticity, and balance ability in predicting rehabilitation outcomes \cite{bib1}.
-\end{itemize}
+\section{Proposed Pipeline}
+The high-level pipeline is: URL input; allowlist/blocklist lookup; extraction of more than 90 candidate features; cross-dataset analysis and selection of eight stable features; Bayesian hyperparameter optimisation; XGBoost prediction; risk classification; and display of the result in a browser extension. Users may also confirm classifications, allowing domains to be added to the relevant allowlist or blocklist.\cite{bib1}
 
-
+\section{Main Contributions}
+The main contribution is the evaluation of URL phishing detection under dataset shift. The paper also examines feature-importance stability, reports dataset-specific results and thresholds, and compares XGBoost with a neural network in terms of accuracy, training time, inference time, and memory use.

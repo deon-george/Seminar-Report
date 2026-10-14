@@ -1,29 +1,12 @@
-\chapter{\MakeUppercase{Problem Statement}}
+\chapter{Problem Statement}
 \setcounter{equation}{0}
-
 \section{Problem Addressed}
-Patients recovering from stroke show considerable variation in their response to BCI-based
-rehabilitation. Some achieve meaningful improvements in lower-limb motor function, while others show
-limited recovery. A treatment strategy that works well for one patient may not produce the same result
-for another.
-Traditional clinical assessment may not capture all relationships among demographic, clinical and
-biomechanical factors. Furthermore, machine-learning models may generate predictions without clearly
-identifying the features that influenced their outputs.
-Problem statement: How can multimodal behavioral data be used to predict lower-limb motor recovery
-and classify stroke patients’ response to BCI-based rehabilitation while explaining the factors
-influencing these predictions?\cite{bib1}
-\section{Significance of the Problem}
-Accurate prediction of rehabilitation outcomes could help clinicians establish realistic treatment goals
-and identify patients who may need additional assessment or alternative strategies. A model using
-multiple types of patient information may capture complementary relationships that are not
-represented by one clinical measurement alone.
-Explainability is equally important. Identifying influential variables such as baseline motor impairment,
-muscle spasticity and balance function can help clinicians understand the basis of model predictions.
-The framework therefore addresses both prediction and explanation.
+Phishing URL detectors may achieve strong results when training and testing use the same dataset, yet perform less reliably on URLs from other sources. This limits confidence in deploying such models as browser protection. URL features can also vary in availability and predictive value across datasets, making feature selection a key part of generalisation.
+
+\noindent\textbf{Problem statement:} How can an XGBoost-based URL phishing detector be designed and evaluated to balance detection quality, computational efficiency, and generalisation across distinct URL datasets?
+
+\section{Research Questions}
+The paper investigates three questions: (1) whether XGBoost achieves cross-dataset generalisation compared with baseline methods; (2) how feature-importance stability relates to cross-dataset performance; and (3) how the computational efficiency of XGBoost compares with neural networks for real-time deployment.\cite{bib1}
+
 \section{Scope of the Seminar}
-This seminar reviews the research framework proposed by Sun et al. for predicting stroke patients’
-response to BCI-based rehabilitation using explainable AI. It covers BCI rehabilitation, multimodal
-patient data, regression, classification, LOOCV, stepwise regression, SHAP, reported performance,
-applications, limitations and future research.
-This is a review of the published research. It does not claim that new patient data were collected or that
-the original clinical experiments were independently reproduced.
+This report reviews the published X-PHIDE method, its datasets, feature extraction and selection, Bayesian hyperparameter optimisation, browser plug-in workflow, evaluation results, strengths, limitations, and possible future work. The numerical results are those reported by the original authors; no independent training or replication is claimed.

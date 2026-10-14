@@ -1,26 +1,17 @@
-\chapter{\MakeUppercase{Applications}}
+\chapter{Applications}
 \setcounter{equation}{0}
+\section{Potential Practical Uses}
+\subsection{Browser-Based Protection}
+The X-PHIDE design targets a browser plug-in that examines external links and presents a risk category before the user proceeds. URL-focused analysis can provide an early warning without requiring the user to manually inspect technical URL characteristics.\cite{bib1}
 
-\section{{Potential Practical Uses}}
+\subsection{Security Awareness}
+The safe, suspicious, and potentially harmful categories can communicate risk in a form that is easier for users to understand than a raw model probability. Clear warnings may help users pause before entering credentials or downloading content from a suspicious destination.
 
-\subsection{{Personalized Rehabilitation Planning}}
+\subsection{Allowlist and Blocklist Support}
+Maintaining trusted and malicious domain lists can reduce repeated inference for known domains and allow confirmed feedback to inform subsequent decisions. Such lists need maintenance because domains can change ownership or become compromised.
 
-Predicted outcomes and explanations may help clinicians understand differences in recovery potential and consider patient-specific rehabilitation goals.
+\subsection{Security Research and Evaluation}
+The paper's cross-dataset methodology can inform the evaluation of other URL classifiers. Testing on independent datasets helps identify distribution shifts and reduces the risk of reporting overly optimistic performance from one dataset alone.
 
-\subsection{{Treatment-Response Assessment}}
-
-Classification models may help researchers investigate which patients are more likely to meet the response criterion defined for a particular treatment study.
-
-\subsection{{Clinical Decision Support}}
-
-Interpretable predictions may provide additional information for clinicians reviewing assessments and planning rehabilitation. Predictions should complement, not replace, clinical evaluation.
-
-\subsection{{Rehabilitation Research}}
-
-The framework can help researchers investigate relationships between baseline motor function, spasticity, balance, and post-treatment outcomes.
-
-\subsection{{Explainable Medical AI}}
-
-The combination of machine learning and Explainable Artificial Intelligence (XAI) illustrates how medical prediction systems can be evaluated by numerical performance and transparency.
-
-These are potential uses; the paper does not establish that a fully deployed clinical product has been validated for routine care.
+\section{Deployment Considerations}
+Real-world deployment requires attention to latency, model size, browser compatibility, false positives, false negatives, privacy, and model updates. The published demonstration is described as limited to one service and the Chrome browser. Therefore, the reported results should be treated as evidence for the method, not proof of a fully generalised commercial product.

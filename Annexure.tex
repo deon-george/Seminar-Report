@@ -13,11 +13,32 @@
 \newpage
 \pagenumbering{arabic}
 \renewcommand{\thepage}{A\arabic{page}}
-\begin{center}
-    
 
+\newcommand{\annexureslidepair}[2]{%
+  \begin{center}
+    \includegraphics[
+      width=\textwidth,
+      height=0.42\textheight,
+      keepaspectratio
+    ]{images/#1.png}\\[0.02\textheight]
+    \includegraphics[
+      width=\textwidth,
+      height=0.42\textheight,
+      keepaspectratio
+    ]{images/#2.png}
+  \end{center}
+  \clearpage
+}
 
-
-
-
-\end{center}
+\annexureslidepair{1}{2}
+\annexureslidepair{3}{4}
+\annexureslidepair{5}{6}
+\annexureslidepair{7}{8}
+\annexureslidepair{9}{10}
+\annexureslidepair{11}{12}
+\annexureslidepair{13}{14}
+\annexureslidepair{15}{16}
+\annexureslidepair{17}{18}
+\annexureslidepair{19}{20}
+\annexureslidepair{21}{22}
+\annexureslidepair{23}{24}

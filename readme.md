@@ -11,7 +11,7 @@ This repository contains the LaTeX source for the seminar report based on the so
 
 - `thesis.tex`: Main LaTeX entry point
 - `frontpage.tex`: Title page, certificate, acknowledgement, abstract, and abbreviations
-- `chapter1.tex` through `chapter12.tex`: Report chapters
+- `chapter/chapter1.tex` through `chapter/chapter12.tex`: Report chapters
 - `ref.tex`: References
 - `Annexure.tex`, `append.tex`, and `vm.tex`: Supporting report sections
 - `dmathesis.cls`, `format.tex`, and `showlabel.sty`: Document class and formatting files

@@ -6,6 +6,13 @@ When a user clicks an external link, the browser plug-in captures the destinatio
 \section{Feature Extraction}
 The research system extracts more than 90 candidate URL and domain characteristics. These include lexical features, DNS and network information, security/authentication signals, domain reputation, and URL behaviour. Examples include URL length, the number of hyphens in the URL path, brand-related keywords, authentication-related keywords in subdomains, nameserver count, the number of dots in the URL, HTTPS presence, and domain registration age. Since feature availability differs between datasets, common features are compared before selecting the final set.\cite{bib1}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/pipeline.png}
+\caption{Feature extraction pipeline used to construct URL and domain features.}
+\label{fig:feature-pipeline}
+\end{figure}
+
 \section{Selection of Eight Features}
 The authors apply criteria intended to prioritise cross-dataset reliability over performance on one dataset alone: mean importance greater than 0.02, minimum importance greater than 0.005, coefficient of variation below 0.8, and presence in at least 75\% of datasets. The paper notes that only one of 32 analysed features met every criterion, illustrating the difficulty of finding stable signals. The final model uses eight selected features, including URL length, hyphen count in the path, brand-related keywords, authentication-related subdomain count, nameserver count, dot count, HTTPS presence, and domain registration age.\cite{bib1}
 

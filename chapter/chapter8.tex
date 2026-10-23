@@ -3,6 +3,13 @@
 \section{Feature Stability and Dataset Differences}
 The article compares feature importance across the custom, GramBeddings, and PhiUSIIL datasets. URL length was identified as a relatively robust feature, with reported mean importance of 0.0319 and coefficient of variation of 0.7843. HTTPS showed much greater variation in importance, from 0.125 in GramBeddings to 0.513 in PhiUSIIL. This is consistent with the observed dataset-dependent effect of HTTPS on accuracy.\cite{bib1}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/urlLength.png}
+\caption{HTTPS usage and URL-length distributions across the evaluated datasets.}
+\label{fig:url-length}
+\end{figure}
+
 \section{Why Dataset Shift Matters}
 Datasets can differ in URL length distributions, HTTPS adoption, phishing prevalence, collection period, and source. A classifier may inadvertently learn patterns that distinguish the labels in one dataset but do not persist in another. Cross-dataset tests reveal this risk and give a more realistic view of the model's limits than a single random split.
 

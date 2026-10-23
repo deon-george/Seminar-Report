@@ -19,5 +19,12 @@ The authors use three datasets. The custom dataset contains 75,738 URLs assemble
 \section{Proposed Pipeline}
 The high-level pipeline is: URL input; allowlist/blocklist lookup; extraction of more than 90 candidate features; cross-dataset analysis and selection of eight stable features; Bayesian hyperparameter optimisation; XGBoost prediction; risk classification; and display of the result in a browser extension. Users may also confirm classifications, allowing domains to be added to the relevant allowlist or blocklist.\cite{bib1}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/systemOverview.png}
+\caption{System overview of the browser-based X-PHIDE phishing detection method.}
+\label{fig:system-overview}
+\end{figure}
+
 \section{Main Contributions}
 The main contribution is the evaluation of URL phishing detection under dataset shift. The paper also examines feature-importance stability, reports dataset-specific results and thresholds, and compares XGBoost with a neural network in terms of accuracy, training time, inference time, and memory use.

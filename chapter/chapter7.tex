@@ -24,8 +24,22 @@ Average across three datasets & 77.93\%\\
 \end{table}
 The results show a substantial performance decline on independent data compared with the custom test set. The average F1 score across the three datasets is 77.93\%. This supports the paper's central point: high performance on one dataset does not guarantee equally strong performance on another.\cite{bib1}
 
+\begin{table}[htbp]
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/datasetComparison.png}
+\caption{Cross-dataset performance of XGBoost with 95\% bootstrap confidence intervals over 10 repeats.}
+\label{tab:dataset-comparison}
+\end{table}
+
 \section{Comparison with a Neural Network}
 In the reported benchmark, XGBoost achieved 2.1\% higher accuracy, trained 12.6 times faster (0.95 seconds compared with 12.01 seconds), and used 3.6 times less memory. The neural network had faster inference (7.51 ms compared with 20.6 ms) and a smaller model size. The best choice therefore depends on whether training cost, inference latency, memory footprint, or predictive quality is the primary constraint.\cite{bib1}
+
+\begin{table}[htbp]
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/modelComparison.png}
+\caption{Reported paired sign-flip permutation tests comparing models across datasets.}
+\label{tab:model-comparison}
+\end{table}
 
 \section{Impact of HTTPS}
 The contribution of HTTPS presence differed by dataset. The reported accuracy change when the feature was included was +4.97 percentage points for the custom dataset, +0.04 points for GramBeddings, and +12.81 points for PhiUSIIL. The paper explains that the value of HTTPS as a signal depends on the distribution of legitimate and phishing URLs in each dataset. HTTPS alone should therefore not be treated as proof that a website is safe.\cite{bib1}

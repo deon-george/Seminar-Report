@@ -167,7 +167,7 @@ like to extend my sincere appreciation to all the laboratory staff for their tim
   \textbf{\large ABSTRACT}
 \end{center}
 {\normalsize
-\begin{spacing}{1.0}
+\begin{spacing}{1.5}
 Phishing URLs are frequently used to deceive users into revealing sensitive information, transferring money, or accessing malicious resources. Machine-learning-based URL detection can provide early warnings, but models evaluated on a single dataset may not generalise well to URLs collected from different sources. This seminar reviews X-PHIDE, an XGBoost-based URL phishing detection method proposed by Misiek and Hyla. The study evaluates a custom dataset containing 75,738 URLs, the 639,723-URL GramBeddings dataset, and a feature-compatible subset of PhiUSIIL containing 47,103 URLs. More than 90 candidate URL and domain features are analysed, and eight features are selected using cross-dataset importance and stability criteria. Bayesian hyperparameter optimisation is used to tune XGBoost, and the system combines allowlist/blocklist checks with model predictions in a browser plug-in workflow. The reported model achieves 90.72\% accuracy and 91.16\% F1 on the custom test set, while F1 scores on GramBeddings and PhiUSIIL are 73.25\% and 69.37\%, respectively. In a comparison with a neural network, XGBoost trains 12.6 times faster and uses 3.6 times less memory, although the neural network has faster inference and a smaller model size. The results demonstrate the value of efficient tree-based detection and, importantly, show why cross-dataset validation is necessary. Continued monitoring, model updates, and independent testing remain important for practical deployment.\cite{bib1}
 
 \end{spacing}

@@ -3,7 +3,7 @@
 **XGBoost-Based URL Phishing Detection Method With Cross-Dataset Validation**
 
 > [!TIP]
-> 📑 [Click here to view the full seminar report (`thesis.pdf`)](https://github.com/deon-george/Seminar-Report/raw/refs/heads/main/thesis.pdf)
+> 📑 [Click here to download the full seminar report (`thesis.pdf`)](https://github.com/deon-george/Seminar-Report/raw/refs/heads/main/thesis.pdf)
 
 ## Contents
 
